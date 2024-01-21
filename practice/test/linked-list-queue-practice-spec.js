@@ -23,11 +23,11 @@ describe('Part 2: Linked Lists', () => {
     list.addToTail(4);
 
     expect(list.listLength()).to.equal(4);
+
   });
 
 
   it('`sumOfNodes` returns the sum total of all nodes', () => {
-
     list.addToTail(1);
     list.addToTail(4);
     list.addToTail(5);
@@ -174,12 +174,20 @@ describe('Part 3: Doubly Linked Lists', () => {
     dll.reverseInPlace();
 
     let cur = dll.head;
+    let cur2 = dll.tail;
+
     for (let i = 6 ; i >= 1 ; i--) {
       expect(cur.value).to.equal(i);
       cur = cur.next;
     }
 
     expect(cur).to.equal(null);
+
+    for (let i = 1 ; i >= 6 ; i++) {
+      expect(cur2.value).to.equal(i);
+      console.log(cur2);
+      cur2 = cur2.prev;
+    }
   });
 
 
